@@ -34,7 +34,7 @@ namespace DrugSearch.Parsing
                 {
                     AptekaName = aptekaName,
                     WorkingHours = workingHours,
-                    Address = address,
+0                    Address = "Екатеринбург " + address,
                     Phones = phones,
                     UpdateDate = updateDate,
                     Price = price

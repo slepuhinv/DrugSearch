@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+<div class="form-group">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Название лекарства" data-bind="value: searchString">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn btn-success" data-bind="click:find">Искать</button>
+    </div>
+</div>
+
+<div class="form-group">
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Место" data-bind="value: searchPlaceString">
+    </div>
+    <div class="input-group">
+        <button type="submit" class="btn btn-success" data-bind="click:findPlace">Искать место</button>
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>DrugName</th>
+            <th>PriceMin</th>
+            <th>PriceMax</th>
+        </tr>
+    </thead>
+    <tbody data-bind="foreach: data">
+        <tr data-bind="click: $root.rowClicked">
+            <td data-bind="text: drugName"></td>
+            <td data-bind="text: priceMin"></td>
+            <td data-bind="text: priceMax"></td>
+        </tr>
+    </tbody>
+</table>
+
+<button class="btn btn-warning" data-bind="click: createMap">Создать карту</button>
+<button class="btn btn-default" data-bind="click: bind">Bind</button>
+<div id="map" style="width: 100%; height: 600px;"></div>
