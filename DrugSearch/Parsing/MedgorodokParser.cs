@@ -11,6 +11,7 @@ namespace DrugSearch.Parsing
         public string Phones { get; set; }
         public string UpdateDate { get; set; }
         public string Price { get; set; }
+        public string Url { get; set; }
 
     }
     public static class MedgorodokParser
@@ -23,6 +24,8 @@ namespace DrugSearch.Parsing
             {
                 var rowDom = CQ.Create(row);
 
+                var url = rowDom[".apothecas-addresses-list-item-name-field a"][0].GetAttribute("href");
+                
                 var aptekaName = rowDom[".apothecas-addresses-list-item-name-field a"].Text();
                 var workingHours = rowDom[".apothecas-addresses-list-item-name-time"].Text().Trim();
                 var address = rowDom[".apothecas-addresses-list-item-contacts-address"].Text();
@@ -34,10 +37,11 @@ namespace DrugSearch.Parsing
                 {
                     AptekaName = aptekaName,
                     WorkingHours = workingHours,
-0                    Address = "Екатеринбург " + address,
+                    Address = "Екатеринбург " + address,
                     Phones = phones,
                     UpdateDate = updateDate,
-                    Price = price
+                    Price = price,
+                    Url = "http://www.medgorodok.ru" + url
                 };
             }
         }

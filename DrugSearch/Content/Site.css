@@ -1,5 +1,5 @@
 ﻿body {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 20px;
 }
 
@@ -28,6 +28,36 @@ tr {
     cursor: pointer;
 }
 
-tr:hover {
-   background-color: azure;
+    tr:hover {
+        background-color: azure;
+    }
+
+
+.map {
+    position: fixed;
+    top: 0px;
+    bottom: 30px;
+    width: 100%;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.15), 0 2px 5px -3px rgba(0,0,0,.15);
+    z-index: 10;
+}
+
+.footer {
+    position: fixed;
+    height: 30px;
+    bottom: 0px;
+    background-color: #FFD633;
+    color: #000;
+    width: 100%;
+    line-height: 30px;
+    padding-left: 10px;
+}
+
+.sidepanel {
+    position: fixed;
+    z-index: 100;
+    left: 30px;
+    top: 30px;
+    background-color: azure;
+    box-shadow: 0 1px 2px 1px rgba(0,0,0,.15), 0 2px 5px -3px rgba(0,0,0,.15);
 }

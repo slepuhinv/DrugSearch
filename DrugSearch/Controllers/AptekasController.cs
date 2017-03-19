@@ -28,7 +28,7 @@ namespace DrugSearch.Controllers
             return "value";
         }
 
-        // POST: api/Apthekas
+        // POST: api/Aptekas
         public async Task<IEnumerable<AptekaDrugInfo>> Post([FromBody]AptekasQuery query)
         {
             var html = await HtmlDownloader.Download("http://www.medgorodok.ru" + query.Url);
